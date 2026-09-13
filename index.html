@@ -6,8 +6,15 @@
   <style>
     body {
       margin: 0;
-      background: #fdfdfd;
+      background: #f0f8ff; /* light background so pets are visible */
       overflow: hidden;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
     }
 
     /* Container for pets */
@@ -23,42 +30,32 @@
     }
 
     .pet {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       animation: bounce 2s infinite ease-in-out;
     }
 
-    /* Example doodle ghost */
+    /* Ghost doodle only */
     .ghost {
       background-image: url('ghost-doodle.png');
     }
 
-    /* Example doodle duck */
-    .duck {
-      background-image: url('duck-doodle.png');
-      animation: waddle 3s infinite ease-in-out;
-    }
-
-    /* Animations */
+    /* Bouncing animation */
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @keyframes waddle {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
+      50% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
+  <h1>🐾 Welcome to Doodle Desktop Pets 🐾</h1>
+  <p>Now it's only about the ghost! Make sure <b>ghost-doodle.png</b> is in the same folder as this file.</p>
+
   <div class="pet-container">
     <div class="pet ghost"></div>
-    <div class="pet duck"></div>
-    <!-- Add more pets here -->
   </div>
 </body>
 </html>
