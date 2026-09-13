@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doodle Desktop Pets</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fdfdfd;
+      overflow: hidden;
+    }
+
+    /* Container for pets */
+    .pet-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      pointer-events: none; /* pets don’t block clicks */
+    }
+
+    .pet {
+      width: 80px;
+      height: 80px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    /* Example doodle ghost */
+    .ghost {
+      background-image: url('ghost-doodle.png');
+    }
+
+    /* Example doodle duck */
+    .duck {
+      background-image: url('duck-doodle.png');
+      animation: waddle 3s infinite ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes waddle {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="pet-container">
+    <div class="pet ghost"></div>
+    <div class="pet duck"></div>
+    <!-- Add more pets here -->
+  </div>
+</body>
+</html>
