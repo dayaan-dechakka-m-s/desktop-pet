@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Doodle Desktop Pets</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Container for pets -->
-  <div class="pet-container">
-    <div class="pet ghost"></div>
-    <div class="pet duck"></div>
-  </div>
+const ghost = document.getElementById("ghost");
+const speech = document.getElementById("speech");
 
-  <!-- Link to optional JavaScript -->
-  <script src="script.js"></script>
-</body>
-</html>
+const messages = [
+    "Boo! 👻",
+    "Hello! ✨",
+    "Hehe! 👻",
+    "I'm your little ghost!",
+    "Don't be scared! 😂",
+    "Give me attention! 💕",
+    "You're doing great! ⭐",
+    "Boooooo! 👻"
+];
+
+ghost.addEventListener("click", function () {
+
+    const randomNumber = Math.floor(
+        Math.random() * messages.length
+    );
+
+    speech.textContent = messages[randomNumber];
+
+    ghost.classList.remove("clicked");
+
+    void ghost.offsetWidth;
+
+    ghost.classList.add("clicked");
+});
