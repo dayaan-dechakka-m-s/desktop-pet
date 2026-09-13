@@ -5,7 +5,7 @@ const messages = [
     "Boo! 👻",
     "Hello! ✨",
     "Hehe! 👻",
-    "I'm your little ghost!",
+    "I'm your ghost!",
     "Don't be scared! 😂",
     "Give me attention! 💕",
     "You're doing great! ⭐",
@@ -14,11 +14,10 @@ const messages = [
 
 ghost.addEventListener("click", function () {
 
-    const randomNumber = Math.floor(
-        Math.random() * messages.length
-    );
+    const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
 
-    speech.textContent = messages[randomNumber];
+    speech.textContent = randomMessage;
 
     ghost.classList.remove("clicked");
 
