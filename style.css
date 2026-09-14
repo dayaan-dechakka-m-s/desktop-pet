@@ -1,120 +1,498 @@
-* {
-    box-sizing: border-box;
-}
-
+html,
 body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #dff6ff;
-}
 
-.desktop {
+    margin: 0;
+
     width: 100%;
     height: 100%;
-    position: relative;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    user-select: none;
+
 }
 
-.ghost {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 180px;
+#pet {
 
-    transform: translate(-50%, -50%);
+    position: relative;
+
+    width: 180px;
+    height: 180px;
 
     cursor: pointer;
 
-    animation: float 3s ease-in-out infinite;
+    transform-origin:
+        center bottom;
+
 }
 
-.ghost-image {
-    display: block;
-    width: 180px;
-    height: auto;
+/* Shadow */
 
-    object-fit: contain;
+.shadow {
 
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* Speech bubble */
-
-.speech {
     position: absolute;
-    top: -60px;
-    left: 50%;
 
-    transform: translateX(-50%);
+    width: 90px;
+    height: 18px;
 
-    background: white;
+    left: 45px;
+    bottom: 13px;
 
-    border: 3px solid #222;
+    background:
+        rgba(0,0,0,.18);
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+}
+
+/* Body */
+
+.body {
+
+    position: absolute;
+
+    width: 105px;
+    height: 70px;
+
+    left: 48px;
+    top: 76px;
+
+    border-radius:
+        55% 48% 45% 45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0c995,
+            #c9874c
+        );
+
+    border:
+        2px solid
+        rgba(80,45,20,.2);
+
+}
+
+/* Head */
+
+.head {
+
+    position: absolute;
+
+    width: 92px;
+    height: 88px;
+
+    left: 30px;
+    top: 32px;
+
+    border-radius:
+        48% 48% 45% 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0ce9e,
+            #bd7947
+        );
+
+    border:
+        2px solid
+        rgba(80,45,20,.2);
+
+    z-index: 10;
+
+}
+
+/* Face */
+
+.face {
+
+    position: absolute;
+
+    width: 57px;
+    height: 70px;
+
+    left: 17px;
+    top: 12px;
+
+    background: #fff0d5;
+
+    border-radius: 50%;
+
+}
+
+/* Eyes */
+
+.eye {
+
+    position: absolute;
+
+    width: 11px;
+    height: 14px;
+
+    top: 31px;
+
+    background: #211812;
+
+    border-radius: 50%;
+
+    z-index: 20;
+
+    animation:
+        blink 5s infinite;
+
+}
+
+.eye-left {
+    left: 22px;
+}
+
+.eye-right {
+    right: 22px;
+}
+
+/* Nose */
+
+.nose {
+
+    position: absolute;
+
+    width: 17px;
+    height: 13px;
+
+    left: 37px;
+    top: 48px;
+
+    background: #17110e;
+
+    border-radius: 50%;
+
+    z-index: 30;
+
+}
+
+/* Mouth */
+
+.mouth {
+
+    position: absolute;
+
+    width: 24px;
+    height: 14px;
+
+    left: 33px;
+    top: 57px;
+
+    border-bottom:
+        3px solid #48291c;
+
+    border-radius: 50%;
+
+    z-index: 25;
+
+}
+
+/* Ears */
+
+.ear {
+
+    position: absolute;
+
+    width: 39px;
+    height: 65px;
+
+    top: -20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #87502f,
+            #573522
+        );
+
+    border-radius:
+        55% 45% 60% 60%;
+
+    z-index: 1;
+
+}
+
+.ear-left {
+
+    left: -18px;
+
+    transform:
+        rotate(18deg);
+
+}
+
+.ear-right {
+
+    right: -18px;
+
+    transform:
+        rotate(-18deg);
+
+}
+
+/* Collar */
+
+.collar {
+
+    position: absolute;
+
+    width: 82px;
+    height: 10px;
+
+    left: 5px;
+    top: 43px;
+
+    background: #b92f38;
+
+    border-radius: 10px;
+
+    z-index: 40;
+
+}
+
+/* Tag */
+
+.tag {
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    left: 35px;
+    top: 48px;
+
+    background: #e6bd55;
+
+    border-radius: 50%;
+
+    z-index: 50;
+
+}
+
+/* Tail */
+
+.tail {
+
+    position: absolute;
+
+    width: 62px;
+    height: 22px;
+
+    left: 125px;
+    top: 75px;
+
+    background: #d09255;
+
+    border-radius: 50%;
+
+    transform-origin: left center;
+
+    animation:
+        wag .4s infinite alternate;
+
+    z-index: 2;
+
+}
+
+/* Legs */
+
+.leg {
+
+    position: absolute;
+
+    width: 20px;
+    height: 45px;
+
+    bottom: -25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e5b97e,
+            #b97643
+        );
+
     border-radius: 15px;
 
-    padding: 8px 14px;
+    transform-origin: top;
 
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-
-    white-space: nowrap;
-
-    box-shadow: 3px 3px 0 #222;
-
-    z-index: 5;
 }
 
-.speech::after {
-    content: "";
+.leg1 {
+    left: 10px;
+}
+
+.leg2 {
+    left: 38px;
+}
+
+.leg3 {
+    right: 30px;
+}
+
+.leg4 {
+    right: 5px;
+}
+
+/* Walking */
+
+.walking .leg1,
+.walking .leg3 {
+
+    animation:
+        walkA .3s infinite alternate;
+
+}
+
+.walking .leg2,
+.walking .leg4 {
+
+    animation:
+        walkB .3s infinite alternate;
+
+}
+
+/* Breathing */
+
+.body {
+
+    animation:
+        breathe 2s infinite ease-in-out;
+
+}
+
+/* Animations */
+
+@keyframes wag {
+
+    from {
+        transform: rotate(18deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
+
+}
+
+@keyframes walkA {
+
+    from {
+        transform: rotate(16deg);
+    }
+
+    to {
+        transform: rotate(-16deg);
+    }
+
+}
+
+@keyframes walkB {
+
+    from {
+        transform: rotate(-16deg);
+    }
+
+    to {
+        transform: rotate(16deg);
+    }
+
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.025);
+    }
+
+}
+
+@keyframes blink {
+
+    0%,
+    45%,
+    50%,
+    100% {
+
+        transform:
+            scaleY(1);
+
+    }
+
+    48% {
+
+        transform:
+            scaleY(.1);
+
+    }
+
+}
+
+/* Emotion */
+
+#emotion {
 
     position: absolute;
-    bottom: -10px;
-    left: 50%;
 
-    width: 12px;
-    height: 12px;
+    left: 80px;
+    top: 10px;
 
-    background: white;
+    font-size: 24px;
 
-    border-right: 3px solid #222;
-    border-bottom: 3px solid #222;
+    opacity: 0;
 
-    transform: translateX(-50%) rotate(45deg);
+    pointer-events: none;
+
 }
 
-/* Floating animation */
+.show-emotion {
 
-@keyframes float {
+    animation:
+        emotion 1.2s ease-out;
 
-    0%, 100% {
-        transform: translate(-50%, -50%) translateY(0);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) translateY(-15px);
-    }
 }
 
-/* Click animation */
-
-.ghost.clicked {
-    animation: bounce 0.5s ease;
-}
-
-@keyframes bounce {
+@keyframes emotion {
 
     0% {
-        transform: translate(-50%, -50%) scale(1);
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.5);
+
     }
 
-    50% {
-        transform: translate(-50%, -50%) scale(1.15);
+    30% {
+
+        opacity: 1;
+
     }
 
     100% {
-        transform: translate(-50%, -50%) scale(1);
+
+        opacity: 0;
+
+        transform:
+            translateY(-35px)
+            scale(1.2);
+
     }
+
 }
