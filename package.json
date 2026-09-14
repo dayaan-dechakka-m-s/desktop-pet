@@ -1,0 +1,21 @@
+{
+  "name": "desktop-buddy",
+  "version": "1.0.0",
+  "description": "A cute 3D-style desktop pet for Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.desktopbuddy.pet",
+    "productName": "Desktop Buddy",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
